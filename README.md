@@ -27,20 +27,13 @@ You need logic to turn `A owes B $10` and `B owes C $10` into just `A owes C $10
    *   Validation
 4. Download, extract, and open the project in your IDE.
 ### Step 2: Database Configuration
-In src/main/resources/application.properties (or .yml), configure your database:
-``properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/settleup
-spring.datasource.username=postgres
-spring.datasource.password=yourpassword
-spring.jpa.hibernate.ddl-auto=update
-spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
-``
+In src/main/resources/application.properties (or .yml), configure your database
 ### Step 3: Create JPA Entities
 Create your domain models in a models or entities package:
 *   User.java (implementing UserDetails for Security)
 *   Group.java (ManyToMany relationship with Users)
 *   Expense.java (ManyToOne with Group)
-*   UserShare.java (Matches a User to an Expense, detailing mountPaid and mountOwed)
+*   UserShare.java (Matches a User to an Expense, detailing mountPaid and mountOwed)
 ### Step 4: Repositories and Services
 1.  Create standard Spring Data JPA Repositories for the entities.
 2.  **UserService:** Handle user registration, password hashing (BCrypt), and profile fetching.
@@ -85,7 +78,7 @@ In App.jsx, configure your routes using React Router:
 *   /dashboard: View total balances, list of groups, and recent activity.
 *   /group/:id: View group members, list expenses, settle debts.
 ### Step 5: API Integration with Axios
-Create an pi.js file:
+Create an api.js file:
 ``javascript
 import axios from 'axios';
 const api = axios.create({
