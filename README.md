@@ -28,7 +28,7 @@ You need logic to turn `A owes B $10` and `B owes C $10` into just `A owes C $10
 4. Download, extract, and open the project in your IDE.
 ### Step 2: Database Configuration
 In src/main/resources/application.properties (or .yml), configure your database
-### Step 3: Create JPA Entities
+
 Create your domain models in a models or entities package:
 *   User.java (implementing UserDetails for Security)
 *   Group.java (ManyToMany relationship with Users)
