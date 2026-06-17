@@ -1,1 +1,0 @@
-// This is js file for the frontend of the application. It contains the main logic for handling user interactions and updating the UI accordingly.
